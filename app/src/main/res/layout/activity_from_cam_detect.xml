@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FromCamDetect">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:id="@+id/frame"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+        <com.camerakit.CameraKitView
+            android:id="@+id/camera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:keepScreenOn="true"
+        app:camera_flash="auto"
+        app:camera_facing="back"
+        app:camera_focus="continuous"
+        app:camera_permissions="camera" />
+
+    </FrameLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/capImage"
+        app:layout_constraintTop_toBottomOf="@+id/frame"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/layout_bg"
+        android:elevation="5dp"
+        android:src="@drawable/capture_image_foreground"
+        tools:targetApi="lollipop" />
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/flipCamera"
+        app:layout_constraintTop_toBottomOf="@+id/frame"
+        app:layout_constraintLeft_toRightOf="@+id/capImage"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/layout_bg"
+        android:elevation="5dp"
+        android:src="@drawable/flip_camera_foreground"
+        tools:targetApi="lollipop"
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

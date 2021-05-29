@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreatePdf">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/fileName"
+        app:layout_constraintVertical_bias="0.07"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:hint="filename"
+        android:background="@drawable/edit_border"
+        android:padding="10dp"
+        android:elevation="5dp"
+
+        tools:targetApi="p" />
+
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="450dp"
+        android:scrollbars="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/fileName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.05"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+
+            >
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="6dp"
+                tools:targetApi="lollipop"
+                android:id="@+id/txtField"
+
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_des_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="410dp"
+                    android:textAlignment="textStart"
+                    android:ems="20"
+                    android:background="@drawable/edit_border"
+                    android:elevation="10dp"
+                    android:hint="Text"
+                    android:textSize="14sp"
+                    android:padding="20dp"
+                    android:inputType="textMultiLine"
+                    android:gravity="start">
+
+                </com.google.android.material.textfield.TextInputEditText>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintVertical_bias="1"
+        android:text="Save as pdf"
+        android:id="@+id/convertPdf"
+        />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        android:id="@+id/radioGroup"
+        android:layout_marginTop="10dp"
+        android:checkedButton="@id/normal">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Normal"
+            android:id="@+id/normal"
+            android:textSize="16sp"
+            android:onClick="checkButton"
+           />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bold"
+            android:textStyle="bold"
+            android:id="@+id/bold"
+            android:textSize="16sp"
+            android:onClick="checkButton"
+            />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Italic"
+            android:textStyle="italic"
+            android:id="@+id/italic"
+            android:textSize="16sp"
+            android:onClick="checkButton"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Underline"
+            android:textStyle="italic"
+            android:id="@+id/underline"
+            android:textSize="16sp"
+            android:onClick="checkButton"/>
+
+
+
+    </RadioGroup>
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner"
+        app:layout_constraintLeft_toRightOf="@+id/convertPdf"
+        app:layout_constraintTop_toBottomOf="@id/scrollView2"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="30dp"
+        />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

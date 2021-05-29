@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ClassifiedText">
+
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/fileName"
+        app:layout_constraintVertical_bias="0.07"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:hint="filename"
+        android:background="@drawable/edit_border"
+        android:padding="10dp"
+        android:elevation="5dp"
+
+        tools:targetApi="p" />
+
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="450dp"
+        android:scrollbars="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/fileName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.05"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="410dp"
+                android:id="@+id/text"
+                android:textAlignment="textStart"
+                android:ems="20"
+                android:hint="Text"
+                android:background="@drawable/edit_border"
+                android:textSize="14sp"
+                android:padding="20dp"
+                android:gravity="start"
+                android:textColor="@color/black"
+                android:scrollbars="vertical"
+                android:textIsSelectable="true"
+
+                />
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="6dp"
+                tools:targetApi="lollipop"
+                android:visibility="gone"
+                android:id="@+id/txtField"
+
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_des_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="410dp"
+                    android:textAlignment="textStart"
+                    android:ems="20"
+                    android:background="@drawable/edit_border"
+                    android:elevation="10dp"
+                    android:hint="Text"
+                    android:textSize="14sp"
+                    android:padding="20dp"
+                    android:inputType="textMultiLine"
+                    android:gravity="start">
+
+                </com.google.android.material.textfield.TextInputEditText>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintVertical_bias="0.05"
+        android:id="@+id/editTxt"
+        android:text="Edit text"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.92"
+        app:layout_constraintVertical_bias="0.05"
+        android:text="Convert to pdf"
+        android:id="@+id/convertPdf"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
