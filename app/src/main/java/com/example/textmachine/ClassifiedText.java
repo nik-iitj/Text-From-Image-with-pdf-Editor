@@ -58,6 +58,7 @@ public class ClassifiedText extends AppCompatActivity {
 
         int height = data.getInt("height");
         int width = data.getInt("width");
+        String kkk="";
 
         stringImg = findViewById(R.id.edit_des_text);
         fileName = findViewById(R.id.fileName);
@@ -101,14 +102,9 @@ public class ClassifiedText extends AppCompatActivity {
 
                 }
 
-
-
-
             }
 
         });
-
-
 
     }
 
